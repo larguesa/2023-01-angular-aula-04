@@ -3,16 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-me',
+  selector: 'app-flow',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './me.component.html',
-  styleUrls: ['./me.component.css'],
+  templateUrl: './flow.component.html',
+  styleUrls: ['./flow.component.css'],
 })
-export class MeComponent implements OnInit {
-  myName: string;
+export class FlowComponent implements OnInit {
+  n: number = 10;
 
-  n = 10;
+  constructor() {}
+
+  ngOnInit() {}
 
   getNumbers() {
     let arr = [];
@@ -21,10 +23,4 @@ export class MeComponent implements OnInit {
     }
     return arr;
   }
-
-  constructor() {
-    this.myName = 'Ricardo';
-  }
-
-  ngOnInit() {}
 }
