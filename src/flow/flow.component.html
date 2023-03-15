@@ -1,12 +1,15 @@
 <h2>Fluxo de controle</h2>
 <input type="number" [(ngModel)]="n" />
+<input type="button" value="Refresh" (click)="update()" />
 <hr />
 <table border="1">
   <tr>
+    <th>Índice</th>
     <th>Número</th>
     <th>Par ou impar</th>
   </tr>
-  <tr *ngFor="let n of getNumbers()">
+  <tr *ngFor="let n of getNumbers(); index as i">
+    <td>{{ i + 1 }}</td>
     <td>{{ n }}</td>
     <td>
       <span *ngIf="n % 2 == 0">PAR</span>

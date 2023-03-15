@@ -12,16 +12,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class FlowComponent implements OnInit {
   n: number = 10;
+  arr: number[];
 
   constructor() {}
 
   ngOnInit() {}
 
-  getNumbers() {
-    let arr = [];
+  update(){
+    this.arr = [];
     for (let i = 1; i <= this.n; i++) {
-      arr.push(Math.trunc(100 * Math.random()));
+      this.arr.push(Math.trunc(100 * Math.random()));
     }
-    return arr;
+  }
+
+  getNumbers() {
+    return this.arr;
   }
 }
